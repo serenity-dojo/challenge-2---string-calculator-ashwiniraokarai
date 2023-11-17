@@ -11,13 +11,11 @@ public class Calculator {
         }
 
         String[] arrayOfStrings = expression.split("\\s");
-
         result = arrayOfStrings[0];
 
         for(int i = 0; i < arrayOfStrings.length - 1; i=i+2){
             result = operate(result, arrayOfStrings[i+1], arrayOfStrings[i+2]);
         }
-
         return Integer.parseInt(result);
     }
 
@@ -31,7 +29,7 @@ public class Calculator {
             case "+": integerResult = integerOne + integerTwo; break;
             case "-": integerResult = integerOne - integerTwo; break;
             case "*": integerResult = integerOne * integerTwo; break;
-            default: integerResult = -1; //-1 is code for "don't recognize this operator. I will mark this to throw an exception eventually"
+            default: integerResult = -1; //-1 is code for "don't recognize this operator, so flag this to throw an exception eventually"
         }
 
         if(integerResult == -1){
